@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:csml="http://52north.org/cosmSensorMl" targetNamespace="http://52north.org/cosmSensorMl"
+	elementFormDefault="qualified">
+	<xs:element name="CosmSensorMl">
+		<xs:complexType>
+			<xs:sequence>
+				
+
+				<xs:element name="LongName" type="xs:string"></xs:element>
+
+				<xs:element name="ShortName" type="xs:string"></xs:element>
+
+				<xs:element name="CreatedAt" type="xs:date"></xs:element>
+
+				<xs:element name="EndAt" type="xs:date"></xs:element>
+
+				<xs:element name="Capabilities" type="csml:CapabilitiesList"></xs:element>
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CapabilitiesList">
+					<xs:sequence>
+						<xs:element name="capability" minOccurs="0" maxOccurs="unbounded"
+							type="csml:Capability"></xs:element>
+					</xs:sequence>
+
+				</xs:complexType>
+
+
+
+
+	<xs:complexType name="Capability">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"></xs:element>
+			<xs:element name="Type" type="xs:string"></xs:element>
+			<xs:element name="Value" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+
+</xs:schema>
+	
